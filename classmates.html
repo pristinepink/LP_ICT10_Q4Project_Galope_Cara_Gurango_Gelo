@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classmate List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🪽 Classmate List</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🌸 Home</a></li>
+        <li><a href="classmates.html">🪽 Classmate List</a></li>
+        <li><a href="attendance.html">🍓 Attendance Tracker</a></li>
+        <li><a href="photos.html">🍥 Photo Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="tracker-box">
+      <h2>Add a Classmate</h2>
+      <form id="addForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="section" placeholder="Section" required>
+        <input type="text" id="subject" placeholder="Favorite Subject" required>
+        <button type="submit">➕ Add Classmate</button>
+      </form>
+    </section>
+
+    <section class="chart-box">
+      <h2>Classmate List</h2>
+      <button id="showList">📋 Show Classmates</button>
+      <div id="list"></div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025–2026 10-Quartz. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    let classmates = [
+      {name: "Nathan", section: "Quartz", subject: "Science"},
+      {name: "Anthea", section: "Quartz", subject: "Math"},
+      {name: "Maiah", section: "Quartz", subject: "Music & Social Studies"},
+      {name: "Anxela", section: "Quartz", subject: "Music & Social Studies"},
+      {name: "Gab", section: "Quartz", subject: "Art"},
+      {name: "Joo", section: "Quartz", subject: "Social Studies"},
+      {name: "Caiomey", section: "Quartz", subject: "Snack Time"},
+      {name: "Athena", section: "Quartz", subject: "TLE"},
+      {name: "Nikolo", section: "Quartz", subject: "PE"},
+      {name: "Chelsea", section: "Quartz", subject: "Social Studies"},
+      {name: "Jercey", section: "Quartz", subject: "English"},
+      {name: "Sittie", section: "Quartz", subject: "Math"},
+      {name: "Jarett", section: "Quartz", subject: "Math"},
+      {name: "JB Estapia", section: "Quartz", subject: "TLE"},
+      {name: "Chloe", section: "Quartz", subject: "Social Studies"},
+      {name: "Uriel", section: "Quartz", subject: "TLE"},
+      {name: "Aaron", section: "Quartz", subject: "PE"},
+      {name: "Gelo", section: "Quartz", subject: "Filipino"},
+      {name: "Ezra", section: "Quartz", subject: "Social Studies"},
+      {name: "JB Liwag", section: "Quartz", subject: "PE"},
+      {name: "Anika", section: "Quartz", subject: "English & Science"},
+      {name: "Kaila", section: "Quartz", subject: "Music"},
+      {name: "Noleen", section: "Quartz", subject: "Science"},
+      {name: "Xander", section: "Quartz", subject: "Math"},
+      {name: "Sam", section: "Quartz", subject: "Social Studies"},
+      {name: "Pio", section: "Quartz", subject: "PE"},
+      {name: "Katelyn", section: "Quartz", subject: "Social Studies"},
+      {name: "Andrei", section: "Quartz", subject: "Dismissal"},
+      {name: "Lucas", section: "Quartz", subject: "Math"},
+      {name: "Hans", section: "Quartz", subject: "PE & Social Studies"}
+    ];
+
+    function renderClassmates() {
+      document.getElementById("list").innerHTML = classmates
+        .map(c => `
+          <div class="classmate-card">
+            <p>🌸 Hi! I am <strong>${c.name}</strong> from <em>${c.section}</em>.</p>
+            <p>My favorite subject is <u>${c.subject}</u>.</p>
+          </div>
+        `)
+        .join("");
+    }
+
+    document.getElementById("showList").onclick = renderClassmates;
+
+    document.getElementById("addForm").onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const section = document.getElementById("section").value;
+      const subject = document.getElementById("subject").value;
+
+      classmates.push({name, section, subject});
+      document.getElementById("addForm").reset();
+      alert("✅ Classmate added! Click 'Show Classmates' to refresh the list.");
+    };
+  </script>
+</body>
+</html>

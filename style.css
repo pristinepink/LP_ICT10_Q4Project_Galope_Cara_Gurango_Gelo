@@ -1,0 +1,162 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #f9cee7;
+  color: #333;
+  text-align: center;
+  padding: 1.5em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #e68bbe;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #eea1cd;
+  margin: 0;
+  padding: 0.7em;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: #e68bbe;
+  transform: scale(1.1);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;  
+  align-items: flex-start;   
+  gap: 40px;               
+  padding: 40px;
+  flex-wrap: wrap; 
+}
+
+.tracker-box {
+  background: #fde4f2;
+  border: 2px solid #f4b8da;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.tracker-box h2 {
+  color: #e68bbe;
+  margin-bottom: 10px;
+}
+
+.tracker-box input, select, button {
+  margin: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  width: 80%;
+}
+
+button {
+  background: #eea1cd;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #e68bbe;
+  transform: scale(1.05);
+}
+
+.chart-box {
+  flex: 1;
+  text-align: center;
+}
+
+.chart-box h2 {
+  color: #e68bbe;
+  margin-bottom: 20px;
+}
+
+.chart {
+  width: 80%;
+  max-width: 650px;
+  border: 3px solid #eea1cd;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  margin-top: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery figure {
+  background: #f9cee7;
+  border: 2px solid #f4b8da;
+  border-radius: 12px;
+  margin: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.gallery img {
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.gallery figure:hover {
+  transform: scale(1.05);
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #e68bbe;
+}
+
+footer {
+  background: #eea1cd;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;
+}
